@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diabetes Disease</title>
+    <style>
+         body {
+            background-image: url("../static/image/diabetes.png");
+            background-size: cover;
+        }
+
+        .container {
+            padding: 30px;
+            margin: 10px;
+            margin-right: 70%;
+        }
+
+        .container h1 {
+            text-align: center;
+            color: white;
+        }
+
+        .container .predictform form {
+            padding: 10px 30px 10px 30px;
+            text-align: center;
+
+        }
+
+        .container .predictform form input {
+            padding: 10px;
+            margin-bottom: 7px;
+            height: 10px;
+            width: 250px;
+            border-radius: 5px;
+
+        }
+
+        .container .predictform form button {
+            color: black;
+            background-color: white;
+            border: 2px solid orange;
+            width: 100px;
+            height: 40px;
+            border-radius: 10px;
+            font-weight: bolder;
+            font-size: medium;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>Diabetes Prediction</h1>
+        <div class="predictform">
+            <form action="{{ url_for('predict2')}}" method="post">
+                <input type="text" name="Glucose" placeholder="Glucose" required="required" /> <br>
+                <input type="text" name="BloodPressure" required="required" placeholder="BloodPressure" /> <br>
+                <input type="text" name="Insulin" required="required" placeholder="Insulin" /> <br>
+                <input type="text" name="BMI" required="required" placeholder="BMI" /> <br>
+                <input type="text" name="DiabetesPedigreeFunction" required="required"
+                    placeholder="DiabetesPedigreeFunction" /> <br>
+                <input type="text" name="Age" required="required" placeholder="Age" /> <br>
+                <button type="submit">Predict</button>
+
+            </form>
+        </div>
+
+    </div>
+</body>
+
+</html>
